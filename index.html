@@ -15,6 +15,7 @@
             justify-content: center; /* 横方向に中央に配置 */
             height: 100vh; /* ビューポートの高さに合わせる */
             position: relative; /* ドアが画像の上に重なるため */
+            background-color: #f0f0f0; /* 背景色を設定（任意） */
         }
         .container img {
             max-width: 100%; /* 画像が親要素を超えないように */
@@ -28,7 +29,11 @@
             transform: translate(-50%, -50%); /* 中央に配置 */
             width: 100px; /* ドアの幅 */
             height: 150px; /* ドアの高さ */
-            background-color: rgba(0, 0, 0, 0.5); /* ドアのスタイル（背景色など） */
+            background-color: rgba(0, 0, 0, 0.5); /* ドアのスタイル（半透明の黒） */
+            border: 1px solid rgba(0, 0, 0, 0.5); /* ドアの境界線（任意） */
+        }
+        .door-hidden {
+            display: none; /* 判定が表示されないようにする */
         }
     </style>
 </head>
