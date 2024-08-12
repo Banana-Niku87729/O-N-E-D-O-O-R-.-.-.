@@ -12,3 +12,15 @@ html {
     justify-content: center;
       
 }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh; /* ビューポートの高さを設定 */
+            background-color: #000000; /* 背景色を設定（任意） */
+        }
+        .container img {
+            max-width: 100%; /* 画像が親要素を超えないようにする */
+            max-height: 100%; /* 画像が親要素を超えないようにする */
+        }
