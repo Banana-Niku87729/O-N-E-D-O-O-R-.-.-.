@@ -16,6 +16,8 @@ html {
         html, body {
             height: 100%; /* ビューポート全体の高さを確保 */
             margin: 0; /* デフォルトのマージンをリセット */
+              background-color: #000000; /* 背景を黒に設定 */
+
         }
         .container {
             display: flex;
