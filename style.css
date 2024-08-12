@@ -11,27 +11,34 @@ html {
     display: flex;
     justify-content: center;
       
+html, body {
+    height: 100%;
+    margin: 0;
+    background-color: #000000; /* 背景を黒に設定 */
 }
 
-        html, body {
-            height: 100%; /* ビューポート全体の高さを確保 */
-            margin: 0; /* デフォルトのマージンをリセット */
-              background-color: #000000; /* 背景を黒に設定 */
+.container {
+    display: flex;
+    align-items: center; /* 縦方向に中央に配置 */
+    justify-content: center; /* 横方向に中央に配置 */
+    height: 100vh; /* ビューポートの高さに合わせる */
+    position: relative; /* ドアが画像の上に重なるため */
+}
 
-        }
-        .container {
-            display: flex;
-            align-items: center; /* 縦の中央 */
-            justify-content: center; /* 横の中央 */
-            height: 100vh; /* ビューポートの高さに合わせる */
-            background-color: #000000; /* 背景色を設定（任意） */
-        }
-        .container img {
-            max-width: 100%; /* 画像が親要素を超えないようにする */
-            max-height: 100%; /* 画像が親要素を超えないようにする */
-        }
+.container img {
+    max-width: 100%; /* 画像が親要素を超えないように */
+    max-height: 100%; /* 画像が親要素を超えないように */
+    display: block; /* 画像が中央に表示されるように */
+}
 
-.center {
-  display: flex;
-  justify-content: center;
+.door {
+    position: absolute; /* 画像の上に重ねる */
+    cursor: pointer; /* ポインターを表示 */
+    top: 50%; /* ビューポートの中央 */
+    left: 50%; /* ビューポートの中央 */
+    transform: translate(-50%, -50%); /* 中央に配置 */
+    width: 100px; /* ドアの幅 */
+    height: 150px; /* ドアの高さ */
+    background-color: rgba(0, 0, 0, 0); /* 完全に透明な背景 */
+    border: 0; /* ボーダーを削除 */
 }
