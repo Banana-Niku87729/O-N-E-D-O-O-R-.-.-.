@@ -1,12 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link href="style.css" rel="stylesheet" />
-  <title>O n e D o o r</title>
+    <link href="style.css" rel="stylesheet" />
+    <title>O n e D o o r</title>
+    <style>
+        .container {
+            position: relative; /* ドアが画像の上に重なるようにするため */
+            display: inline-block; /* 画像とドアが正しく配置されるように */
+        }
+        .door {
+            position: absolute; /* ドアを画像の上に重ねるため */
+            cursor: pointer; /* ポインターを表示 */
+            top: 50%; /* 垂直中央に配置 */
+            left: 50%; /* 水平中央に配置 */
+            transform: translate(-50%, -50%); /* 中央に配置するためのオフセット */
+            width: 100px; /* ドアのサイズを調整 */
+            height: 150px; /* ドアのサイズを調整 */
+            background-color: rgba(0, 0, 0, 0.5); /* ドアのスタイル（背景色など） */
+        }
+    </style>
 </head>
 <body>
-<div class="container">
-<img src="asd.webp" alt="...?">
-</div> 
+    <div class="container">
+        <img src="asd.webp" alt="...?">
+        <div class="door" id="door"></div>
+        <audio id="doorSound" src="door-sound.mp3"></audio> <!-- 音声ファイルを指定 -->
+    </div> 
+
+    <script>
+        document.getElementById('door').addEventListener('click', function() {
+            var audio = document.getElementById('doorSound');
+            audio.play(); // 音声を再生
+        });
+    </script>
 </body>
 </html>
