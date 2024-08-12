@@ -16,32 +16,28 @@
             justify-content: center; /* 横方向に中央に配置 */
             height: 100vh; /* ビューポートの高さに合わせる */
             position: relative; /* ドアが画像の上に重なるため */
-            background-color: #000000; /* 背景色を設定（任意） */
+            background-color: #000000; /* 背景色を設定 */
         }
         .container img {
             max-width: 100%; /* 画像が親要素を超えないように */
             max-height: 100%; /* 画像が親要素を超えないように */
         }
         .door {
-    position: absolute; /* 画像の上に重ねる */
-    cursor: pointer; /* ポインターを表示 */
-    top: 50%; /* ビューポートの中央 */
-    left: 50%; /* ビューポートの中央 */
-    transform: translate(-50%, -50%); /* 中央に配置 */
-    width: 100px; /* ドアの幅 */
-    height: 150px; /* ドアの高さ */
-    background-color: rgba(0, 0, 0, 0); /* 完全に透明な背景 */
-    visibility: hidden; /* 要素を非表示にする */
-}
-
-        .door-hidden {
-            display: none; /* 判定が表示されないようにする */
+            position: absolute; /* 画像の上に重ねる */
+            cursor: pointer; /* ポインターを表示 */
+            top: 50%; /* ビューポートの中央 */
+            left: 50%; /* ビューポートの中央 */
+            transform: translate(-50%, -50%); /* 中央に配置 */
+            width: 100px; /* ドアの幅 */
+            height: 150px; /* ドアの高さ */
+            background-color: rgba(0, 0, 0, 0); /* 完全に透明な背景 */
+            visibility: hidden; /* 要素を非表示にする */
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <img src="asd.webp" alt="...?">
+        <img src="asd.webp" alt="画像が表示されません">
         <div class="door" id="door"></div>
         <audio id="doorSound" src="door-sound.mp3"></audio> <!-- 音声ファイルを指定 -->
     </div> 
@@ -49,7 +45,16 @@
     <script>
         document.getElementById('door').addEventListener('click', function() {
             var audio = document.getElementById('doorSound');
-            audio.play(); // 音声を再生
+            if (audio) {
+                console.log('Audio element found.'); // 音声要素が見つかったことを確認
+                audio.play().then(() => {
+                    console.log('Audio is playing.');
+                }).catch((error) => {
+                    console.error('Error playing audio:', error);
+                });
+            } else {
+                console.error('Audio element not found.');
+            }
         });
     </script>
 </body>
