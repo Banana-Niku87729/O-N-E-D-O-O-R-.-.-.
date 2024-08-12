@@ -23,16 +23,18 @@
             max-height: 100%; /* 画像が親要素を超えないように */
         }
         .door {
-            position: absolute; /* 画像の上に重ねる */
-            cursor: pointer; /* ポインターを表示 */
-            top: 50%; /* ビューポートの中央 */
-            left: 50%; /* ビューポートの中央 */
-            transform: translate(-50%, -50%); /* 中央に配置 */
-            width: 100px; /* ドアの幅 */
-            height: 150px; /* ドアの高さ */
-            background-color: rgba(0, 0, 0, 0.5); /* ドアのスタイル（半透明の黒） */
-            border: 1px solid rgba(0, 0, 0, 0.5); /* ドアの境界線（任意） */
-        }
+    position: absolute; /* 画像の上に重ねる */
+    cursor: pointer; /* ポインターを表示 */
+    top: 50%; /* ビューポートの中央 */
+    left: 50%; /* ビューポートの中央 */
+    transform: translate(-50%, -50%); /* 中央に配置 */
+    width: 100px; /* ドアの幅 */
+    height: 150px; /* ドアの高さ */
+    background-color: rgba(0, 0, 0, 0); /* 完全に透明な背景 */
+    border: 0; /* ボーダーを削除 */
+    visibility: hidden; /* 要素を非表示にする */
+}
+
         .door-hidden {
             display: none; /* 判定が表示されないようにする */
         }
