@@ -56,6 +56,14 @@
                 console.error('Audio element not found.');
             }
         });
+
+        document.getElementById('doorSound').addEventListener('canplaythrough', function() {
+            console.log('Audio file can play through.');
+        });
+
+        document.getElementById('doorSound').addEventListener('error', function() {
+            console.error('Error loading audio file.');
+        });
     </script>
 </body>
 </html>
