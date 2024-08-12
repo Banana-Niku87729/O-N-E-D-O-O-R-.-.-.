@@ -1,21 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
-    <link href="style.css" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>O n e D o o r</title>
     <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
         .container {
-            position: relative; /* ドアが画像の上に重なるようにするため */
-            display: inline-block; /* 画像とドアが正しく配置されるように */
+            display: flex;
+            align-items: center; /* 縦方向に中央に配置 */
+            justify-content: center; /* 横方向に中央に配置 */
+            height: 100vh; /* ビューポートの高さに合わせる */
+            position: relative; /* ドアが画像の上に重なるため */
+        }
+        .container img {
+            max-width: 100%; /* 画像が親要素を超えないように */
+            max-height: 100%; /* 画像が親要素を超えないように */
         }
         .door {
-            position: absolute; /* ドアを画像の上に重ねるため */
+            position: absolute; /* 画像の上に重ねる */
             cursor: pointer; /* ポインターを表示 */
-            top: 50%; /* 垂直中央に配置 */
-            left: 50%; /* 水平中央に配置 */
-            transform: translate(-50%, -50%); /* 中央に配置するためのオフセット */
-            width: 100px; /* ドアのサイズを調整 */
-            height: 150px; /* ドアのサイズを調整 */
+            top: 50%; /* ビューポートの中央 */
+            left: 50%; /* ビューポートの中央 */
+            transform: translate(-50%, -50%); /* 中央に配置 */
+            width: 100px; /* ドアの幅 */
+            height: 150px; /* ドアの高さ */
             background-color: rgba(0, 0, 0, 0.5); /* ドアのスタイル（背景色など） */
         }
     </style>
