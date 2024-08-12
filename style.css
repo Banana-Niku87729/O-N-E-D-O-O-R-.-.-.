@@ -13,11 +13,15 @@ html {
       
 }
 
+        html, body {
+            height: 100%; /* ビューポート全体の高さを確保 */
+            margin: 0; /* デフォルトのマージンをリセット */
+        }
         .container {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh; /* ビューポートの高さを設定 */
+            align-items: center; /* 縦の中央 */
+            justify-content: center; /* 横の中央 */
+            height: 100vh; /* ビューポートの高さに合わせる */
             background-color: #000000; /* 背景色を設定（任意） */
         }
         .container img {
