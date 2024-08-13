@@ -1,12 +1,70 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
-<link href="style.css" rel="stylesheet" />
-  <title>pure white</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O n e D o o r</title>
+    <link href="style.css" rel="stylesheet" />
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+        .container {
+            display: flex;
+            align-items: center; /* 縦方向に中央に配置 */
+            justify-content: center; /* 横方向に中央に配置 */
+            height: 100vh; /* ビューポートの高さに合わせる */
+            position: relative; /* ドアが画像の上に重なるため */
+            background-color: #000000; /* 背景色を設定 */
+        }
+        .container img {
+            max-width: 100%; /* 画像が親要素を超えないように */
+            max-height: 100%; /* 画像が親要素を超えないように */
+        }
+        .door {
+            position: absolute; /* 画像の上に重ねる */
+            cursor: pointer; /* ポインターを表示 */
+            top: 50%; /* ビューポートの中央 */
+            left: 50%; /* ビューポートの中央 */
+            transform: translate(-50%, -50%); /* 中央に配置 */
+            width: 100px; /* ドアの幅 */
+            height: 150px; /* ドアの高さ */
+            background-color: rgba(255, 255, 255, 0); /* 完全に透明な背景 */
+            border: 0; /* ボーダーを削除 */
+            z-index: 1; /* 画像の上に表示 */
+        }
+    </style>
 </head>
 <body>
-<div class="center">
-<img src="asd.webp" alt="46697273744b45593a4d">
-</div> 
+    <div class="container">
+        <img src="asd.webp" alt="46697273744b45593a4d">
+        <div class="door" id="door"></div>
+        <audio id="doorSound" src="door-sound.mp3"></audio> <!-- 音声ファイルを指定 -->
+    </div> 
+
+    <script>
+        document.getElementById('door').addEventListener('click', function() {
+            var audio = document.getElementById('doorSound');
+            if (audio) {
+                console.log('Audio element found.'); // 音声要素が見つかったことを確認
+                audio.play().then(() => {
+                    console.log('Audio is playing.');
+                }).catch((error) => {
+                    console.error('Error playing audio:', error);
+                });
+            } else {
+                console.error('Audio element not found.');
+            }
+        });
+
+        document.getElementById('doorSound').addEventListener('canplaythrough', function() {
+            console.log('Audio file can play through.');
+        });
+
+        document.getElementById('doorSound').addEventListener('error', function() {
+            console.error('Error loading audio file.');
+        });
+    </script>
 </body>
 </html>
