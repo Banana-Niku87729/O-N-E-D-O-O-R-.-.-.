@@ -2,8 +2,8 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="謇峨ｒ髢九＞縺ｦ縺上□縺輔＞縲√≠縺ｪ縺溘?蜻ｪ縺医∪縺吶°?">
-    <link rel=”icon” href=“black.ico”>
+    <meta name="description" content="謇峨ｒ髢九＞縺ｦ縺上□縺輔＞縲√≠縺ｪ縺溘?蜻ｪ縺医∪縺吶°? https://i.imgur.com/DcLFT6x.png">
+    <link rel="icon" href="black.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>O n e D o o r</title>
     <link href="style.css" rel="stylesheet" />
@@ -14,27 +14,27 @@
         }
         .container {
             display: flex;
-            align-items: center; /* 縦方向に中央に配置 */
-            justify-content: center; /* 横方向に中央に配置 */
-            height: 100vh; /* ビューポートの高さに合わせる */
-            position: relative; /* ドアが画像の上に重なるため */
-            background-color: #000000; /* 背景色を設定 */
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            position: relative;
+            background-color: #000000;
         }
         .container img {
-            max-width: 100%; /* 画像が親要素を超えないように */
-            max-height: 100%; /* 画像が親要素を超えないように */
+            max-width: 100%;
+            max-height: 100%;
         }
         .door {
-            position: absolute; /* 画像の上に重ねる */
-            cursor: pointer; /* ポインターを表示 */
-            top: 50%; /* ビューポートの中央 */
-            left: 50%; /* ビューポートの中央 */
-            transform: translate(-50%, -50%); /* 中央に配置 */
-            width: 100px; /* ドアの幅 */
-            height: 150px; /* ドアの高さ */
-            background-color: rgba(255, 255, 255, 0); /* 完全に透明な背景 */
-            border: 0; /* ボーダーを削除 */
-            z-index: 1; /* 画像の上に表示 */
+            position: absolute;
+            cursor: pointer;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100px;
+            height: 150px;
+            background-color: rgba(255, 255, 255, 0);
+            border: 0;
+            z-index: 1;
         }
     </style>
 </head>
@@ -42,21 +42,26 @@
     <div class="container">
         <img src="asd.webp" alt="画像が表示されません">
         <div class="door" id="door"></div>
-        <audio id="doorSound" src="door-sound.mp3"></audio> <!-- 音声ファイルを指定 -->
+        <audio id="doorSound" src="door-sound.mp3"></audio>
     </div> 
 
     <script>
+        let clickCount = 0;
+        const targetClicks = 40;  // 40回クリックで移動
+        const targetUrl = "https://example.com";  // 移動先のURL
+
         document.getElementById('door').addEventListener('click', function() {
             var audio = document.getElementById('doorSound');
+            clickCount++;
+            
             if (audio) {
-                console.log('Audio element found.'); // 音声要素が見つかったことを確認
-                audio.play().then(() => {
-                    console.log('Audio is playing.');
-                }).catch((error) => {
+                audio.play().catch((error) => {
                     console.error('Error playing audio:', error);
                 });
-            } else {
-                console.error('Audio element not found.');
+            }
+
+            if (clickCount === targetClicks) {
+                window.location.href = targetUrl;  // 40回クリックでページ移動
             }
         });
 
@@ -67,14 +72,13 @@
         document.getElementById('doorSound').addEventListener('error', function() {
             console.error('Error loading audio file.');
         });
-         console.log("The creator is dead...?");
 
-                // 5秒（5000ミリ秒）後にコンソールにメッセージを出力する
+        console.log("The creator is dead...?");
+
         setTimeout(function() {
             console.log("You are truly tenacious and noisy.");
         }, 100000);
 
-                        // 5秒（5000ミリ秒）後にコンソールにメッセージを出力する
         setTimeout(function() {
             console.log("If you've come this far, wait until you reach your limit.");
         }, 200000);
