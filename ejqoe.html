@@ -24,8 +24,9 @@
             text-align: center; /* テキストを中央揃え */
         }
         .container img {
-            max-width: 100%;
-            max-height: 100%;
+            max-width: 200px; /* 幅を200pxに設定 */
+            height: auto; /* 高さを自動調整 */
+            cursor: pointer; /* 画像にカーソルを設定 */
         }
         .door {
             position: absolute;
@@ -39,16 +40,12 @@
             border: 0;
             z-index: 1;
         }
-        #browser-image {
-            max-width: 10%;
-            height: auto;
-        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="door" id="door"></div>
-        <img id="browser-image" src="" alt="error">
+        <img id="browser-image" src="" alt="ブラウザの画像が表示されません">
     </div>
 
     <script>
@@ -74,6 +71,15 @@
         }
 
         document.getElementById('browser-image').src = getBrowserImage();
+
+        document.getElementById('browser-image').addEventListener('click', function() {
+            const password = prompt('...:');
+            if (password === 'Pleasehelpme I mdying.') { 
+                window.location.href = 'https://www.survei.f5.si/openblackeddoord';
+            } else {
+                alert('NO.');
+            }
+        });
     </script>
 </body>
 </html>
