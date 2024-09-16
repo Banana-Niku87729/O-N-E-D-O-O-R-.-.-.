@@ -39,12 +39,39 @@
             border: 0;
             z-index: 1;
         }
+        #browser-image {
+            max-width: 100%;
+            height: auto;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <div>smile.</div>
         <div class="door" id="door"></div>
+    <script>
+        function getBrowserImage() {
+            const userAgent = navigator.userAgent;
+            let imageUrl = '';
+
+            if (userAgent.indexOf('Chrome') > -1 && userAgent.indexOf('Edge') === -1 && userAgent.indexOf('OPR') === -1) {
+                imageUrl = 'chrome.png';
+            } else if (userAgent.indexOf('Firefox') > -1) {
+                imageUrl = 'firefox.png';
+            } else if (userAgent.indexOf('Safari') > -1 && userAgent.indexOf('Chrome') === -1) {
+                imageUrl = 'safari.png';
+            } else if (userAgent.indexOf('Edge') > -1) {
+                imageUrl = 'edge.png';
+            } else if (userAgent.indexOf('Trident') > -1) {
+                imageUrl = 'ie.png';
+            } else {
+                imageUrl = 'asd.webp';
+            }
+
+            return imageUrl;
+        }
+
+        document.getElementById('browser-image').src = getBrowserImage();
+    </script>
     </div>
 </body>
 </html>
