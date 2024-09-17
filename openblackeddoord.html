@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="謇峨ｒ髢九＞縺ｦ縺上□縺輔＞縲√≠縺ｪ縺溘?蜻ｪ縺医∪縺吶°? https://i.imgur.com/DcLFT6x.png">
+    <link rel="icon" href="black.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O n e D o o r</title>
+    <link href="style.css" rel="stylesheet" />
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            position: relative;
+            background-color: #000000;
+        }
+        .container img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+        .door {
+            position: absolute;
+            cursor: pointer;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100px;
+            height: 150px;
+            background-color: rgba(255, 255, 255, 0);
+            border: 0;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="asd.webp" alt="画像が表示されません">
+        <div class="door" id="door"></div>
+        <audio id="doorSound" src="door-sound.mp3"></audio>
+    </div> 
+
+    <script>
+        let clickCount = 0;
+        const targetClicks = 1;  
+        const targetUrl = "https://www.survei.f5.si/verybadsuperbad";  
+
+        document.getElementById('door').addEventListener('click', function() {
+            var audio = document.getElementById('doorSound');
+            clickCount++;
+            
+            if (audio) {
+                audio.play().catch((error) => {
+                    console.error('Error playing audio:', error);
+                });
+            }
+
+            if (clickCount === targetClicks) {
+                window.location.href = targetUrl;  // 
+            }
+        });
+</body>
+</html>
