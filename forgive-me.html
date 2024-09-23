@@ -11,44 +11,27 @@
         html, body {
             height: 100%;
             margin: 0;
-        }
-        .container {
             display: flex;
-            align-items: center;
             justify-content: center;
-            height: 100vh;
-            position: relative;
+            align-items: center;
             background-color: #000000;
         }
-        .container img {
+        video {
             max-width: 100%;
             max-height: 100%;
-        }
-        .door {
-            position: absolute;
-            cursor: pointer;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 100px;
-            height: 150px;
-            background-color: rgba(255, 255, 255, 0);
-            border: 0;
-            z-index: 1;
         }
     </style>
 </head>
 <body>
-  <video autoplay muted loop playsinline src="Video.mp4" controlslist="nodownload noremoteplayback nofullscreen" disablePictureInPicture></video>
+  <video id="myVideo" autoplay muted loop playsinline src="Video.mp4" 
+         controlslist="nodownload noremoteplayback nofullscreen" 
+         disablePictureInPicture></video>
 
   <script>
-      let clickCount = 0;
-      const targetClicks = 0;
-      const targetUrl = "";  
-
-      document.getElementById('door').addEventListener('click', function() {
-          var audio = document.getElementById('doorSound');
-          clickCount++;
+      // 動画の再生終了を検出してリダイレクト
+      const video = document.getElementById('myVideo');
+      video.addEventListener('ended', function() {
+          window.location.href = 'https://www.example.com';  // リダイレクト先のURL
       });
   </script>
 </body>
