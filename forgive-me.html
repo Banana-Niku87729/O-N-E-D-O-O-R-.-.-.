@@ -39,18 +39,17 @@
     </style>
 </head>
 <body>
-  <video playsinline muted autoplay src="Video.mp4"></video>
+  <video autoplay muted loop playsinline src="Video.mp4" controlslist="nodownload noremoteplayback nofullscreen" disablePictureInPicture></video>
 
-    <script>
-        let clickCount = 0;
-        const targetClicks = 0;  
-        const targetUrl = "";  
+  <script>
+      let clickCount = 0;
+      const targetClicks = 0;
+      const targetUrl = "";  
 
-        document.getElementById('door').addEventListener('click', function() {
-            var audio = document.getElementById('doorSound');
-            clickCount++;
-            
-
-    </script>
+      document.getElementById('door').addEventListener('click', function() {
+          var audio = document.getElementById('doorSound');
+          clickCount++;
+      });
+  </script>
 </body>
 </html>
